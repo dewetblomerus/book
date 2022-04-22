@@ -1,0 +1,17 @@
+version: "3"
+services:
+
+  livebook:
+    image: dewetblomerus/livebook-docker-pi:latest
+    container_name: livebook
+    environment:
+      - VERSION=docker
+      - PUID=1000
+      - PGID=1000
+      - TZ=US/Eastern
+    ports:
+      - 9090:8080
+    volumes:
+      - ./data:/home/livebook
+    restart: unless-stopped
+
