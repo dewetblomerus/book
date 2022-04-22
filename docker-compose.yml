@@ -9,8 +9,9 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=US/Eastern
+      - LIVEBOOK_PASSWORD=${LIVEBOOK_PASSWORD}
     ports:
-      - 9090:8080
+      - 9999:8080
     volumes:
       - ./data:/home/livebook
     restart: unless-stopped
