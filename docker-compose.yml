@@ -10,6 +10,7 @@ services:
       - PGID=1000
       - TZ=US/Eastern
       - LIVEBOOK_PASSWORD=${LIVEBOOK_PASSWORD}
+      - OFFICE_LIGHT_WEBHOOK_ID=${OFFICE_LIGHT_WEBHOOK_ID}
     ports:
       - 9999:8080
     volumes:
