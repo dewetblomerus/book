@@ -1,19 +1,35 @@
 version: "3"
 services:
 
-  livebook:
+  livebook-dewet:
     image: dewetblomerus/livebook-docker-pi:latest
-    container_name: livebook
+    container_name: livebook-dewet
     environment:
       - VERSION=docker
       - PUID=1000
       - PGID=1000
       - TZ=US/Eastern
-      - LIVEBOOK_PASSWORD=${LIVEBOOK_PASSWORD}
+      - LIVEBOOK_PASSWORD=${LIVEBOOK_DEWET_PASSWORD}
       - OFFICE_LIGHT_WEBHOOK_ID=${OFFICE_LIGHT_WEBHOOK_ID}
+    ports:
+      - 9998:8080
+    volumes:
+      - ./data-dewet:/home/livebook
+    restart: unless-stopped
+
+  livebook-eva:
+    image: dewetblomerus/livebook-docker-pi:latest
+    container_name: livebook-eva
+    environment:
+      - VERSION=docker
+      - PUID=1000
+      - PGID=1000
+      - TZ=US/Eastern
+      - LIVEBOOK_PASSWORD=${LIVEBOOK_EVA_PASSWORD}
+      - EVA_LIGHT_WEBHOOK_ID=${EVA_LIGHT_WEBHOOK_ID}
     ports:
       - 9999:8080
     volumes:
-      - ./data:/home/livebook
+      - ./data-eva:/home/livebook
     restart: unless-stopped
 
