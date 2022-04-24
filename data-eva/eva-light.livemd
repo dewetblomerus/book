@@ -1,6 +1,6 @@
-<!-- livebook:{"autosave_interval_s":600} -->
+<!-- livebook:{"autosave_interval_s":30} -->
 
-# Office Lights
+# Eva Light
 
 ## Run the following in a shell in the container
 
@@ -39,7 +39,7 @@ end
 ```
 
 ```elixir
-webhook_id = System.fetch_env!("OFFICE_LIGHT_WEBHOOK_ID")
+webhook_id = System.fetch_env!("EVA_LIGHT_WEBHOOK_ID")
 
 set_color = fn color ->
   %HTTPoison.Response{status_code: 200} = HomeAssistant.webhook(webhook_id, %{color: color})
@@ -51,13 +51,29 @@ end
 ## Make API Requests
 
 ```elixir
-set_color.(:day)
+set_color.(:bright)
 ```
 
 ```elixir
-set_color.(:evening)
+set_color.(:warm)
+```
+
+```elixir
+set_color.(:bedtime)
 ```
 
 ```elixir
 set_color.(:night)
+```
+
+```elixir
+set_color.(:green)
+```
+
+```elixir
+set_color.(:pink)
+```
+
+```elixir
+set_color.(:purple)
 ```
