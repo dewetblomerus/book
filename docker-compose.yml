@@ -14,7 +14,7 @@ services:
     ports:
       - 9998:8080
     volumes:
-      - ./data-dewet:/home/livebook
+      - ./data-dewet:/data
     restart: unless-stopped
 
   livebook-eva:
@@ -30,7 +30,7 @@ services:
     ports:
       - 9999:8080
     volumes:
-      - ./data-eva:/home/livebook
+      - ./data-eva:/data
     restart: unless-stopped
 
   livebook-public:
@@ -45,6 +45,6 @@ services:
     ports:
       - ${PUBLIC_PORT}:8080
     volumes:
-      - ./data-public:/home/livebook
+      - ./data-public:/data
     restart: unless-stopped
 
