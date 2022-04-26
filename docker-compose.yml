@@ -2,7 +2,7 @@ version: "3"
 services:
 
   livebook-dewet:
-    image: dewetblomerus/livebook-docker-pi:latest
+    image: livebook/livebook
     container_name: livebook-dewet
     environment:
       - VERSION=docker
@@ -18,7 +18,7 @@ services:
     restart: unless-stopped
 
   livebook-eva:
-    image: dewetblomerus/livebook-docker-pi:latest
+    image: livebook/livebook
     container_name: livebook-eva
     environment:
       - VERSION=docker
@@ -34,7 +34,7 @@ services:
     restart: unless-stopped
 
   livebook-public:
-    image: dewetblomerus/livebook-docker-pi:latest
+    image: livebook/livebook
     container_name: livebook-public
     environment:
       - VERSION=docker
